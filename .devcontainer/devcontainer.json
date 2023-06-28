@@ -1,0 +1,29 @@
+{
+  "name": "docker-playground - python",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "playground",
+  "workspaceFolder": "/workspace",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+  },
+  "remoteUser": "vscode",
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "ms-python.python",
+        "ms-python.flake8",
+        "ms-python.autopep8",
+        "njpwerner.autodocstring"
+      ]
+    }
+  },
+  "postAttachCommand": "nohup bash -c 'source .devcontainer/postAttach.sh &'",
+  "forwardPorts": [
+    5900,
+    5900
+  ]
+}
